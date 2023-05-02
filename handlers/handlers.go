@@ -53,5 +53,7 @@ func WinnersHandler(res http.ResponseWriter, req *http.Request) {
 		ListWinners(res, req)
 	case http.MethodPost:
 		AddNewWinner(res, req)
+	default:
+		res.WriteHeader(http.StatusMethodNotAllowed)
 	}
 }
